@@ -16,6 +16,8 @@ public class NewJFrame extends javax.swing.JFrame {
      */
     public NewJFrame() {
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -34,7 +36,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(289, 175));
+        setMinimumSize(new java.awt.Dimension(305, 214));
         getContentPane().setLayout(null);
 
         jButton1.setText("Opções");
@@ -45,12 +47,12 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(70, 90, 140, 32);
+        jButton1.setBounds(70, 90, 140, 23);
 
         jButton4.setText("Score");
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jButton4);
-        jButton4.setBounds(140, 130, 70, 32);
+        jButton4.setBounds(140, 130, 70, 23);
 
         jButton3.setText("Quit");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -60,7 +62,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(70, 130, 60, 32);
+        jButton3.setBounds(70, 130, 60, 23);
 
         jButton2.setText("Jogar");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -70,7 +72,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(70, 50, 140, 32);
+        jButton2.setBounds(70, 50, 140, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/newpackage/download (10).jpeg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -88,11 +90,6 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-
-   
-
-
 
 
     }//GEN-LAST:event_jButton2ActionPerformed
