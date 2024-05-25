@@ -87,7 +87,7 @@ public class Jogo extends javax.swing.JFrame {
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
-
+        dispose();
 
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
@@ -99,10 +99,16 @@ public class Jogo extends javax.swing.JFrame {
 
         if (numero == numeroSecreto) {
             JOptionPane.showMessageDialog(this, "Parabéns! Você adivinhou o número.");
+            
+             Random random = new Random();
+                numeroSecreto = random.nextInt(10) + 1;
+            
         } else if (numero >= numeroSecreto) {
             JOptionPane.showMessageDialog(this, "O numero é menor: ");
         } else if (numero <= numeroSecreto) {
             JOptionPane.showMessageDialog(this, "O numero é maior: ");
+        }else{
+            JOptionPane.showMessageDialog(null, "Numero invalido: ");
         }
 
     }
