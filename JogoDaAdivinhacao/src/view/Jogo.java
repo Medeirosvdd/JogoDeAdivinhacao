@@ -107,8 +107,6 @@ public class Jogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "O numero é menor: ");
         } else if (numero <= numeroSecreto) {
             JOptionPane.showMessageDialog(this, "O numero é maior: ");
-        }else{
-            JOptionPane.showMessageDialog(null, "Numero invalido: ");
         }
 
     }
