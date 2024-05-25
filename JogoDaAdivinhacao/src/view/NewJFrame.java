@@ -5,6 +5,7 @@
  */
 package view;
 
+
 /**
  *
  * @author aluno.saolucas
@@ -30,7 +31,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ad = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -47,12 +48,17 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(70, 90, 140, 23);
+        jButton1.setBounds(70, 100, 140, 23);
 
-        jButton4.setText("Score");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButton4);
-        jButton4.setBounds(140, 130, 70, 23);
+        ad.setText("Score");
+        ad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ad);
+        ad.setBounds(140, 140, 70, 23);
 
         jButton3.setText("Quit");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -62,7 +68,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(70, 130, 60, 23);
+        jButton3.setBounds(70, 140, 60, 23);
 
         jButton2.setText("Jogar");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -72,9 +78,9 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(70, 50, 140, 23);
+        jButton2.setBounds(70, 60, 140, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/newpackage/download (10).jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/newpackage/Jo (3).png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 290, 175);
 
@@ -90,9 +96,20 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+      
+        
+        new Jogo().setVisible(true);
+        
+        
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void adActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+    }//GEN-LAST:event_adActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,10 +147,10 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
