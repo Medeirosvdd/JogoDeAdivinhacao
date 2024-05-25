@@ -5,18 +5,25 @@
  */
 package view;
 
+import java.util.Random;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mello
  */
 public class Jogo extends javax.swing.JFrame {
 
+    Random random = new Random();
+    int numeroSecreto = random.nextInt(10) + 1;
+
     /**
      * Creates new form Jogo
      */
     public Jogo() {
-       initComponents();
+        initComponents();
         setLocationRelativeTo(null);
+
     }
 
     /**
@@ -28,22 +35,43 @@ public class Jogo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        NumberUsuario = new javax.swing.JTextField();
+        botaoVoltar = new javax.swing.JButton();
+        botaoEnviar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(305, 214));
         getContentPane().setLayout(null);
 
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(30, 70, 220, 30);
+        NumberUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        NumberUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumberUsuarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NumberUsuario);
+        NumberUsuario.setBounds(30, 70, 220, 30);
 
-        jButton1.setText("Enviar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButton1);
-        jButton1.setBounds(30, 110, 63, 23);
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botaoVoltar);
+        botaoVoltar.setBounds(170, 110, 80, 23);
+
+        botaoEnviar.setText("Enviar");
+        botaoEnviar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEnviarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botaoEnviar);
+        botaoEnviar.setBounds(30, 110, 80, 23);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/newpackage/telaJogo (1).png"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -51,6 +79,37 @@ public class Jogo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void NumberUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberUsuarioActionPerformed
+
+
+    }//GEN-LAST:event_NumberUsuarioActionPerformed
+
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_botaoVoltarActionPerformed
+
+    private void botaoEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEnviarActionPerformed
+        // TODO add your handling code here:
+
+        String input = NumberUsuario.getText();
+        int numero = Integer.parseInt(input);
+
+        if (numero == numeroSecreto) {
+            JOptionPane.showMessageDialog(this, "Parabéns! Você adivinhou o número.");
+        } else if (numero >= numeroSecreto) {
+            JOptionPane.showMessageDialog(this, "O numero é menor: ");
+        } else if (numero <= numeroSecreto) {
+            JOptionPane.showMessageDialog(this, "O numero é maior: ");
+        }
+
+    }
+
+    {
+
+    }//GEN-LAST:event_botaoEnviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -66,16 +125,24 @@ public class Jogo extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Jogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jogo.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Jogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jogo.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Jogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jogo.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Jogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jogo.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -88,8 +155,9 @@ public class Jogo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField NumberUsuario;
+    private javax.swing.JButton botaoEnviar;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
