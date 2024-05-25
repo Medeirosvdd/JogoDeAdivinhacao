@@ -16,6 +16,8 @@ public class Jogo extends javax.swing.JFrame {
 
     Random random = new Random();
     int numeroSecreto = random.nextInt(10) + 1;
+    int tentativas = 0;
+    int[] historicoTentativas = new int[100];
 
     /**
      * Creates new form Jogo
@@ -40,7 +42,7 @@ public class Jogo extends javax.swing.JFrame {
         botaoEnviar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(305, 214));
         getContentPane().setLayout(null);
 
@@ -81,8 +83,7 @@ public class Jogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NumberUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberUsuarioActionPerformed
-
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_NumberUsuarioActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
@@ -96,13 +97,17 @@ public class Jogo extends javax.swing.JFrame {
 
         String input = NumberUsuario.getText();
         int numero = Integer.parseInt(input);
+        historicoTentativas[tentativas] = numero; // Armazena a tentativa no vetor
+        tentativas++;
 
         if (numero == numeroSecreto) {
-            JOptionPane.showMessageDialog(this, "Parabéns! Você adivinhou o número.");
-            
-             Random random = new Random();
-                numeroSecreto = random.nextInt(10) + 1;
-            
+            JOptionPane.showMessageDialog(this, "Parabéns! Você adivinhou o número em " + tentativas + " tentativas.");
+
+            Random random = new Random();
+            numeroSecreto = random.nextInt(10) + 1;
+            tentativas = 0;
+            historicoTentativas = new int[100];
+
         } else if (numero >= numeroSecreto) {
             JOptionPane.showMessageDialog(this, "O numero é menor: ");
         } else if (numero <= numeroSecreto) {
