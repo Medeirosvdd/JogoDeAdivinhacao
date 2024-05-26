@@ -116,7 +116,11 @@ public class NewJFrame extends javax.swing.JFrame {
     private void adActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adActionPerformed
         // TODO add your handling code here:
         
-         new Score().setVisible(true);
+        //new Score().setVisible(true);
+                //JOptionPane.showInternalMessageDialog(null, jogada + " Jogada");
+
+        
+        
         
     }//GEN-LAST:event_adActionPerformed
 

@@ -17,8 +17,8 @@ public class Jogo extends javax.swing.JFrame {
     Random random = new Random();
     int numeroSecreto = random.nextInt(10) + 1;
     int tentativas = 0;
-    int[] historicoTentativas = new int[100];
-
+    int jogada = 1;
+    
     /**
      * Creates new form Jogo
      */
@@ -40,6 +40,10 @@ public class Jogo extends javax.swing.JFrame {
         NumberUsuario = new javax.swing.JTextField();
         botaoVoltar = new javax.swing.JButton();
         botaoEnviar = new javax.swing.JButton();
+        TxtTent = new javax.swing.JTextField();
+        TxtJoga = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +79,37 @@ public class Jogo extends javax.swing.JFrame {
         getContentPane().add(botaoEnviar);
         botaoEnviar.setBounds(30, 110, 80, 23);
 
+        TxtTent.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        TxtTent.setEnabled(false);
+        TxtTent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtTentActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtTent);
+        TxtTent.setBounds(90, 140, 20, 30);
+
+        TxtJoga.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TxtJoga.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        TxtJoga.setEnabled(false);
+        TxtJoga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtJogaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtJoga);
+        TxtJoga.setBounds(230, 140, 20, 30);
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel1.setText("Jogadas:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(30, 144, 68, 20);
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel3.setText("Tentativas:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(160, 144, 67, 20);
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/newpackage/telaJogo (1).png"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, -10, 290, 190);
@@ -97,28 +132,44 @@ public class Jogo extends javax.swing.JFrame {
 
         String input = NumberUsuario.getText();
         int numero = Integer.parseInt(input);
-        historicoTentativas[tentativas] = numero; // Armazena a tentativa no vetor
         tentativas++;
-
+         
+          TxtTent.setText("" + jogada);
+          TxtJoga.setText("" + tentativas);
+           
         if (numero == numeroSecreto) {
             JOptionPane.showMessageDialog(this, "Parabéns! Você adivinhou o número em " + tentativas + " tentativas.");
 
             Random random = new Random();
             numeroSecreto = random.nextInt(10) + 1;
             tentativas = 0;
-            historicoTentativas = new int[100];
+            jogada++;
 
         } else if (numero >= numeroSecreto) {
             JOptionPane.showMessageDialog(this, "O numero é menor: ");
         } else if (numero <= numeroSecreto) {
             JOptionPane.showMessageDialog(this, "O numero é maior: ");
         }
+         
 
     }
 
     {
 
     }//GEN-LAST:event_botaoEnviarActionPerformed
+
+    private void TxtTentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTentActionPerformed
+        // TODO add your handling code here:
+     
+     
+
+
+
+    }//GEN-LAST:event_TxtTentActionPerformed
+
+    private void TxtJogaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtJogaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtJogaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,8 +216,12 @@ public class Jogo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NumberUsuario;
+    private javax.swing.JTextField TxtJoga;
+    private javax.swing.JTextField TxtTent;
     private javax.swing.JButton botaoEnviar;
     private javax.swing.JButton botaoVoltar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
