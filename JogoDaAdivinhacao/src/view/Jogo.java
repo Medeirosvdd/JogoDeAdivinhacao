@@ -31,7 +31,7 @@ public class Jogo extends javax.swing.JFrame {
 
         str = JOptionPane.showInputDialog(null, "Qual seu nome? ");
         Integer name = Integer.getInteger(str);
-         if (str == null || str.equals("Cancelar")) {
+        if (str.getBytes().equals("Cancelar")) {
          
         } else {
         }
