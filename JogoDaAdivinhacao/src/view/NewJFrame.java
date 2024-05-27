@@ -39,6 +39,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu");
         setMinimumSize(new java.awt.Dimension(305, 214));
         getContentPane().setLayout(null);
 
@@ -92,7 +93,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
-        JOptionPane.showMessageDialog(null, "Disponivel em breve: ");
+        JOptionPane.showMessageDialog(null, "Isso é um jogo de número, por que teria opções?? ");
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -116,9 +117,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private void adActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adActionPerformed
         // TODO add your handling code here:
         
-        //new Score().setVisible(true);
-                //JOptionPane.showInternalMessageDialog(null, jogada + " Jogada");
-
+      new Score().setVisible(true);
+       
         
         
         

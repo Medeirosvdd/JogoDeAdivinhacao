@@ -29,11 +29,28 @@ public class Score extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botaoVoltar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(289, 175));
+        setMinimumSize(new java.awt.Dimension(305, 209));
         getContentPane().setLayout(null);
+
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botaoVoltar);
+        botaoVoltar.setBounds(190, 140, 80, 23);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setText("Ainda não disponivel");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(35, 60, 220, 29);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/newpackage/ScoreJogo.png"))); // NOI18N
         jLabel1.setMinimumSize(new java.awt.Dimension(305, 214));
@@ -42,6 +59,11 @@ public class Score extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,6 +101,8 @@ public class Score extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
