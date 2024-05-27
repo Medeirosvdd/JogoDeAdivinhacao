@@ -7,7 +7,6 @@ package view;
 
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author aluno.saolucas
@@ -45,6 +44,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jButton1.setText("Opções");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -93,6 +97,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
+//        Audio repro = new Audio();
+//        repro.setVisible(true);
+//        
         JOptionPane.showMessageDialog(null, "Isso é um jogo de número, por que teria opções?? ");
 
 
@@ -100,29 +107,34 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-                dispose();
-        
-        
+        dispose();
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
-        
+
         new Jogo().setVisible(true);
-        
-        
+
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void adActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adActionPerformed
         // TODO add your handling code here:
-        
-      new Score().setVisible(true);
-       
-        
-        
-        
+
+        new Score().setVisible(true);
+
+
     }//GEN-LAST:event_adActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+//         AudioClip Sound;
+//        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/view/efeito.wav"));
+//        Sound.play();
+//        
+
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments

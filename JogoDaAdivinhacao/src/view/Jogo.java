@@ -19,8 +19,7 @@ public class Jogo extends javax.swing.JFrame {
     int tentativas = 0;
     int tent = 0;
     int acertos = 0;
-    
-    
+
     String str;
 
     /**
@@ -32,10 +31,10 @@ public class Jogo extends javax.swing.JFrame {
 
         str = JOptionPane.showInputDialog(null, "Qual seu nome? ");
         Integer name = Integer.getInteger(str);
-        if (str.getBytes().equals("Cancelar")) {
-
-        } else {
-        }
+//        if (str.getBytes().equals("Cancelar")) {
+//         
+//        } else {
+//        }
     }
 
     /**
@@ -116,7 +115,7 @@ public class Jogo extends javax.swing.JFrame {
         TxtJoga.setBounds(230, 140, 20, 30);
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jLabel1.setText("Jogadas:");
+        jLabel1.setText("Acertos:");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 144, 68, 20);
 
@@ -135,11 +134,6 @@ public class Jogo extends javax.swing.JFrame {
     private void NumberUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberUsuarioActionPerformed
         // TODO add your handling code here:
 
-        String cara = "0123456789";
-        if (!cara.contains(e.getKeyChar() + "")) {
-            e.consume();
-        }
-
 
     }//GEN-LAST:event_NumberUsuarioActionPerformed
 
@@ -147,15 +141,14 @@ public class Jogo extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         Object[] opcoes = {"Sim", "Não",};
-        int escolha = JOptionPane.showOptionDialog(null, "Você Teve " + acertos + " acertos " + " e " + tent + " Erros " + "\n" + "Deseja mesmo voltar?",
+        int escolha = JOptionPane.showOptionDialog(null, "Você Teve " + acertos + " acertos e " + tent + " Erros " + "\n" + "Deseja mesmo voltar?",
                 "Deseja mesmo voltar?", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[0]);
-        if(escolha == 0){
-        dispose();
-            
-            
-        }else{
-            
+        if (escolha == 0) {
+            dispose();
+
+        } else {
+
         }
 
 
@@ -173,18 +166,20 @@ public class Jogo extends javax.swing.JFrame {
         TxtJoga.setText("" + tentativas);
 
         if (numero == numeroSecreto) {
-            JOptionPane.showMessageDialog(this, "Parabéns " + str + "!!!" + "\n" + " Você adivinhou o número em " + tentativas + " tentativas."
-                    + "\n" + "\n" + "Tentativas Totais: " + tent);
 
             Random random = new Random();
             numeroSecreto = random.nextInt(10) + 1;
-            tentativas = 0;
             acertos++;
 
+            JOptionPane.showMessageDialog(this, "Parabéns " + str + "!!!" + "\n" + " Você adivinhou o número em " + tentativas + " tentativas."
+                    + "\n" + "\n" + "Tentativas Totais: " + tent + "\n" + "Acertos Totais: " + acertos);
+            tentativas = 0;
+            
+
         } else if (numero >= numeroSecreto) {
-            JOptionPane.showMessageDialog(this, "O numero secreto é menor: ");
+            JOptionPane.showMessageDialog(this, "O numero secreto é menor que: " + "``" + numero+ "´´");
         } else if (numero <= numeroSecreto) {
-            JOptionPane.showMessageDialog(this, "O numero secreto é maior: ");
+            JOptionPane.showMessageDialog(this, "O numero secreto é maior que " + "``" + numero+ "´´");
         }
 
     }
